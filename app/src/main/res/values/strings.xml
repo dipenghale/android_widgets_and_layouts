@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Very First App</string>
+    <string-array name="country_list">
+        <item>Nepal</item>
+        <item>India</item>
+        <item>Bhutan</item>
+        <item>Srilanka</item>
+    </string-array>
+</resources>
