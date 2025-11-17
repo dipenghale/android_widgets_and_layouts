@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Very First App</string>
+    <string name="app_name">My PK App</string>
     <string-array name="country_list">
         <item>Nepal</item>
         <item>India</item>
