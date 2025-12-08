@@ -26,6 +26,20 @@
         android:text="Go To First Acitivity">
     </Button>
 
+    <Button android:id="@+id/loadcontextmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Context Menu">
+
+    </Button>
+
+    <Button android:id="@+id/loadpopupmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Popup Menu">
+
+    </Button>
+
 
 
     <androidx.fragment.app.FragmentContainerView

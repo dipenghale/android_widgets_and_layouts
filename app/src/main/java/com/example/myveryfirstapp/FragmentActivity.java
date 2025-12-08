@@ -2,11 +2,13 @@ package com.example.myveryfirstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,25 @@ public class FragmentActivity extends AppCompatActivity {
         Button firstbutton = findViewById(R.id.firstfragment);
         Button secondbutton = findViewById(R.id.secondfragment);
         Button gotofirst = findViewById(R.id.gotofirst);
+
+        Button loadcontext = findViewById(R.id.loadcontextmenu);
+        registerForContextMenu(loadcontext);
+
+        Button loadpop = findViewById(R.id.loadpopupmenu);
+        loadpop.setOnClickListener(v->{
+        //show popup menu
+            PopupMenu popup = new PopupMenu(this,v);
+            popup.inflate(R.menu.popup_menu);
+            popup.show();
+
+            //popup menu event handling
+            popup.setOnMenuItemClickListener(item->{
+            Toast.makeText(this,"Popup Clicked: "+item.getTitle(),Toast.LENGTH_LONG).show();
+            return true;
+            });
+
+        });
+
         firstbutton.setOnClickListener(v->{
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragmentcontainer, FirstFragment.class, null)
@@ -44,7 +65,7 @@ public class FragmentActivity extends AppCompatActivity {
         });
 
     }
-
+    //option menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -52,13 +73,30 @@ public class FragmentActivity extends AppCompatActivity {
         return true;
     }
 
+    //option menu event handling
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         Toast.makeText(this,"Item Selected: "+ item.getTitle(),Toast.LENGTH_LONG).show();
         Integer itemid = item.getItemId();
         if(itemid==0){
-
+            // write your action
         }
         return true;
     }
+
+    //Context Menu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        super.onCreateContextMenu(menu,v,menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu,menu);
+        menu.setHeaderTitle("Select Item");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        Toast.makeText(this, "Item Selected: "+item.getTitle(), Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
 }
