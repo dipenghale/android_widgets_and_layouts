@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentActivity">
+    <Button
+        android:id="@+id/firstfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load First Fragment">
+    </Button>
+    <Button
+        android:id="@+id/secondfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load Second Fragment">
+    </Button>
+
+    <Button
+        android:id="@+id/gotofirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To First Acitivity">
+    </Button>
+
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+</LinearLayout>

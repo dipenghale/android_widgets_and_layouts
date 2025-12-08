@@ -17,5 +17,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Open Google.com"></Button>
+    <Button
+        android:id="@+id/loadfirstfrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Load First Fragment"></Button>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragmentcontainer">
+
+    </RelativeLayout>
+
 
 </LinearLayout>

@@ -31,6 +31,11 @@ public class FirstActivity extends AppCompatActivity {
             Intent intentbrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intentbrowser);
         });
+
+        Button loadfirstfrag = findViewById(R.id.loadfirstfrag);
+        loadfirstfrag.setOnClickListener(v->{
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentcontainer,FirstFragment.class,null).commit();
+        });
     }
 
     @Override
