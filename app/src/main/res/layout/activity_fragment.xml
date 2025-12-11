@@ -40,6 +40,24 @@
 
     </Button>
 
+    <Button
+        android:id="@+id/openalert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Alert Dialogue">
+    </Button>
+
+    <Button
+        android:id="@+id/pickdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick your DOB"></Button>
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></EditText>
+
 
 
     <androidx.fragment.app.FragmentContainerView
